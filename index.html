@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandy Campbell | Lash & Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span>SC</span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <p class="loader-text">Sandy Campbell</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <div class="logo-monogram">SC</div>
+        <div class="logo-info">
+          <span class="logo-name">Sandy Campbell</span>
+          <span class="logo-sub">Lash &amp; Beauty</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-text="Início">Início</a></li>
+        <li><a href="#servicos" data-text="Serviços">Serviços</a></li>
+        <li><a href="#galeria" data-text="Galeria">Galeria</a></li>
+        <li><a href="#depoimentos" data-text="Depoimentos">Depoimentos</a></li>
+        <li><a href="#agendamento" data-text="Agendar">Agendar</a></li>
+      </ul>
+      <div class="nav-right">
+        <!--
+          BOTÃO WHATSAPP NAVBAR:
+          Altere o número no href (formato: 55 + DDD + número)
+        -->
+        <a href="https://wa.me/5524981282793" class="nav-wa" target="_blank" id="navWa">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span class="h-top"></span>
+          <span class="h-mid"></span>
+          <span class="h-bot"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-nav">
+      <a href="#home" class="mob-link">01 — Início</a>
+      <a href="#servicos" class="mob-link">02 — Serviços</a>
+      <a href="#galeria" class="mob-link">03 — Galeria</a>
+      <a href="#depoimentos" class="mob-link">04 — Depoimentos</a>
+      <a href="#agendamento" class="mob-link">05 — Agendar</a>
+    </nav>
+    <div class="mobile-footer">
+      <!--
+        LINKS REDES SOCIAIS MENU MOBILE:
+        Edite os hrefs abaixo.
+      -->
+      <a href="https://instagram.com/sandycampbelllash" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5524981282793" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <!--
+        IMAGEM DE FUNDO DO HERO:
+        Substitua o src pela sua foto de capa.
+        Tamanho ideal: 1920×1080px
+      -->
+      <img
+        src="minha-capa.png"
+        alt="Sandy Campbell"
+        class="hero-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>Lash &amp; Beauty · Desde. 2023</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="ht-line ht-1" data-word="Sandy">Sandy</span>
+          <span class="ht-line ht-2"><em>Campbell</em></span>
+        </h1>
+        <p class="hero-sub">
+          Olhos que contam histórias.<br/>
+          <em>Cílios que criam memórias.</em>
+        </p>
+        <div class="hero-actions">
+          <a href="#agendamento" class="btn-lux">
+            <span class="btn-lux-bg"></span>
+            <span class="btn-lux-text">
+              <i class="far fa-calendar-alt"></i>
+              Agendar Sessão
+            </span>
+          </a>
+          <!--
+            BOTÃO WHATSAPP HERO:
+            Altere o número no href.
+          -->
+          <a href="https://wa.me/5524981282793" class="btn-ghost" target="_blank" id="heroWa">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-badge">
+          <svg viewBox="0 0 120 120" class="badge-ring">
+            <defs>
+              <path id="circle" d="M 60,60 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"/>
+            </defs>
+            <text class="badge-text-svg">
+              <textPath href="#circle">LASH DESIGNER · EXTENSÃO · VOLUME · HÍBRIDO ·</textPath>
+            </text>
+          </svg>
+          <div class="badge-center">
+            <span class="badge-num">3+</span>
+            <span class="badge-label">anos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="scroll-hint">
+        <span>Rolar</span>
+        <div class="scroll-dot"></div>
+      </div>
+      <div class="hero-counter">
+        <div class="hc-item">
+          <strong>100+</strong><span>Clientes</span>
+        </div>
+        <div class="hc-divider"></div>
+        <div class="hc-item">
+          <strong>100%</strong><span>Certificados</span>
+        </div>
+        <div class="hc-divider"></div>
+        <div class="hc-item">
+          <strong>5★</strong><span>Avaliação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       MANIFESTO / FRASE
+       ============================ -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <div class="manifesto-line"></div>
+      <blockquote class="manifesto-quote">
+        <!--
+          FRASE MANIFESTO:
+          Edite o texto abaixo.
+        -->
+        "A verdadeira beleza não se esconde —<br/>
+        <em>ela enquadra o que você já é."</em>
+      </blockquote>
+      <div class="manifesto-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SERVIÇOS
+       ============================ -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-label">
+          <span class="label-line"></span>
+          <span>02 / Serviços</span>
+        </div>
+        <h2 class="sec-title">Técnicas &amp;<br/><em>Preços</em></h2>
+      </div>
+
+      <div class="serv-carousel-wrap">
+        <!-- Controles superiores -->
+        <div class="serv-nav">
+          <div class="serv-nav-info">
+            <span class="serv-current-label" id="servCurrentLabel">01</span>
+            <span class="serv-sep">/</span>
+            <span class="serv-total-label">09</span>
+          </div>
+          <div class="serv-nav-arrows">
+            <button class="serv-arrow serv-arrow-prev" id="servPrev" aria-label="Serviço anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="serv-arrow serv-arrow-next" id="servNext" aria-label="Próximo serviço">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Track deslizante -->
+        <div class="serv-viewport" id="servViewport">
+          <div class="servicos-list" id="servTrack">
+
+            <!-- SERVIÇO 1 — Cílios Fio a Fio -->
+            <article class="servico-item" data-index="01">
+              <div class="si-img-wrap">
+                <img src="servico1.jpg" alt="Fio a Fio Clássico" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">01</div>
+                <h3 class="si-title">Cílios<br/><em>Fio a Fio clássico</em></h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Realce sua beleza natural com a extensão fio a fio clássica: leve, elegante e perfeita para um olhar marcante todos os dias. Ideal para quem busca alongamento e definição sem perder a naturalidade — acordar pronta nunca foi tão fácil!</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1:30-2h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco">R$ 100,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 15 dias</span><strong class="smt-preco"> R$ 60,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 21 dias</span><strong class="smt-preco"> R$ 70,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 30 dias</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 2 — Volume Luxo -->
+            <article class="servico-item" data-index="02">
+              <div class="si-img-wrap">
+                <img src="servico2.jpg" alt="Volume Luxo" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+                <div class="si-badge-premium">Premium</div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">02</div>
+                <h3 class="si-title">Volume<br/><em>Luxo</em></h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Transforme seu olhar com o volume luxo: cílios mais cheios, intensos e sofisticados, com acabamento impecável e leveza surpreendente. Perfeito para quem quer um efeito glam poderoso sem perder a elegância.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1:30-2h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco">R$ 120,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 15 dias</span><strong class="smt-preco"> R$ 70,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 21 dias</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 30 dias</span><strong class="smt-preco"> R$ 90,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 3 — Volume Brasileiro -->
+            <article class="servico-item" data-index="03">
+              <div class="si-img-wrap">
+                <img src="servico3.jpg" alt="Volume Brasileiro" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">03</div>
+                <h3 class="si-title">Volume Brasileiro</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Destaque seu olhar com o volume brasileiro: o equilíbrio perfeito entre naturalidade e volume, com cílios leves, preenchidos e super elegantes. Ideal para quem quer um efeito marcante no dia a dia, sem exageros.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1:30-2h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 100,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 15 dias</span><strong class="smt-preco"> R$ 60,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 21 dias</span><strong class="smt-preco"> R$ 70,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 30 dias</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 4 — Fox Eyes -->
+            <article class="servico-item" data-index="04">
+              <div class="si-img-wrap">
+                <img src="servico4.jpg" alt="Fox Eyes" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">04</div>
+                <h3 class="si-title">Fox Eyes</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Realce seu olhar com o efeito Fox Eyes: alongado, liftado e super sensual, criando aquele visual puxado e elegante que valoriza o formato dos olhos. Perfeito para quem busca um olhar marcante e sofisticado.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1:30-2h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 120,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Efeito Sirena</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 15 dias</span><strong class="smt-preco"> R$ 70,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 21 dias</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 30 dias</span><strong class="smt-preco"> R$ 90,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 5 — Volume Mega -->
+            <article class="servico-item" data-index="05">
+              <div class="si-img-wrap">
+                <img src="servico5.jpg" alt="Volume Mega" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">05</div>
+                <h3 class="si-title">Volume Mega</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Impacte com o volume mega: cílios extremamente cheios, escuros e dramáticos, para um olhar poderoso que chama atenção de longe. Ideal para quem ama intensidade e não abre mão de um efeito luxuoso.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1:30-2h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 150,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 15 dias</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 21 dias</span><strong class="smt-preco"> R$ 90,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Manutenção 30 dias</span><strong class="smt-preco"> R$ 100,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 6 — Design de sobrancelha -->
+            <article class="servico-item" data-index="06">
+              <div class="si-img-wrap">
+                <img src="servico6.jpg" alt="Design de sobrancelha" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">06</div>
+                <h3 class="si-title">Design de sobrancelha</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Valorize seu rosto com o design de sobrancelhas: alinhamento perfeito, formato personalizado e acabamento impecável para realçar sua beleza natural. Um detalhe que transforma totalmente o olhar.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>30-40min</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 22,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 7 — Design com Henna -->
+            <article class="servico-item" data-index="07">
+              <div class="si-img-wrap">
+                <img src="servico7.jpg" alt="Design com Henna" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">07</div>
+                <h3 class="si-title">Design com Henna</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Realce seu olhar com o design de sobrancelhas com henna: formato perfeito aliado a um leve preenchimento que corrige falhas e define o desenho, deixando tudo mais marcado e natural por mais tempo.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 35,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 8 — Brow Lamination -->
+            <article class="servico-item" data-index="08">
+              <div class="si-img-wrap">
+                <img src="servico8.jpg" alt="Brow Lamination" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">08</div>
+                <h3 class="si-title">Brow Lamination</h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Tenha sobrancelhas mais alinhadas, volumosas e modernas com o brow lamination: fios no lugar, efeito lifting e acabamento natural que valoriza o seu olhar por semanas.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>1h</strong></li>
+                  <li><span>Manutenção</span><strong>2-3 semanas</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Valor</span><strong class="smt-preco"> R$ 80,00</strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SERVIÇO 9 — Micropigmentação -->
+            <article class="servico-item" data-index="09">
+              <div class="si-img-wrap">
+                <img src="servico9.jpg" alt="Micropigmentação de sobrancelha" class="si-img" loading="lazy"/>
+                <div class="si-img-overlay"></div>
+              </div>
+              <div class="si-content">
+                <div class="si-number">09</div>
+                <h3 class="si-title">Micropigmentação<br/><em>de sobrancelha</em></h3>
+                <div class="si-divider"></div>
+                <p class="si-desc">Sobrancelhas perfeitas todos os dias, sem esforço — realce sua beleza com a micropigmentação.</p>
+                <ul class="si-specs">
+                  <li><span>Duração</span><strong>2h</strong></li>
+                </ul>
+                <div class="si-price-row">
+                  <div class="si-manut-table"><div class="smt-rows">
+                    <div class="smt-row smt-row-destaque"><span class="smt-faixa">Micropigmentação Shadow</span><strong class="smt-preco"> R$ 250,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Micropigmentação Fio a Fio</span><strong class="smt-preco"> R$ 200,00</strong></div>
+                    <div class="smt-row"><span class="smt-faixa">Retoque não incluso no valor.</span><strong class="smt-preco"></strong></div>
+                  </div></div>
+                  <a href="#agendamento" class="si-cta si-cta-bottom">Reservar</a>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /servicos-list -->
+        </div><!-- /serv-viewport -->
+
+        <!-- Dots de navegação -->
+        <div class="serv-dots" id="servDots"></div>
+
+      </div><!-- /serv-carousel-wrap -->
+
+
+  <!-- ============================
+       GALERIA
+       ============================ -->
+  <section class="galeria" id="galeria">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-label">
+          <span class="label-line"></span>
+          <span>03 / Galeria</span>
+        </div>
+        <h2 class="sec-title">Resultados<br/><em>Reais</em></h2>
+      </div>
+    </div>
+
+    <div class="galeria-track">
+      <!--
+        GALERIA DE FOTOS:
+        Substitua os src pelas suas fotos reais.
+        Tamanho ideal: 600×800px
+        Você pode adicionar quantos .gt-item quiser.
+      -->
+      <div class="gt-item reveal-scale">
+        <img src="galeria1.jpg" alt="Fio a Fio clássico" loading="lazy"/>
+        <div class="gt-label"><span>Fio a Fio clássico</span></div>
+      </div>
+      <div class="gt-item tall reveal-scale">
+        <img src="galeria2.jpg" alt="Volume Luxo" loading="lazy"/>
+        <div class="gt-label"><span>Volume Luxo</span></div>
+      </div>
+      <div class="gt-item reveal-scale">
+        <img src="galeria3.jpg" alt="Volume Brasileiro" loading="lazy"/>
+        <div class="gt-label"><span>Volume Brasileiro</span></div>
+      </div>
+      <div class="gt-item reveal-scale">
+        <img src="galeria4.jpg" alt="Fox Eyes" loading="lazy"/>
+        <div class="gt-label"><span>Fox Eyes</span></div>
+      </div>
+      <div class="gt-item tall reveal-scale">
+        <img src="galeria5.jpg" alt="Volume Mega" loading="lazy"/>
+        <div class="gt-label"><span>Volume Mega</span></div>
+      </div>
+      <div class="gt-item reveal-scale">
+        <img src="galeria6.jpg" alt="Design de sobrancelha" loading="lazy"/>
+        <div class="gt-label"><span>Design de sobrancelha</span></div>
+      </div>
+      <div class="gt-item tall reveal-scale">
+        <img src="galeria7.jpg" alt="Design com Henna" loading="lazy"/>
+        <div class="gt-label"><span>Design com Henna</span></div>
+      </div>
+      <div class="gt-item reveal-scale">
+        <img src="galeria8.jpg" alt="Brow Lamination" loading="lazy"/>
+        <div class="gt-label"><span>Brow Lamination</span></div>
+      </div>
+      <div class="gt-item reveal-scale">
+        <img src="galeria9.jpg" alt="Brow Lamination" loading="lazy"/>
+        <div class="gt-label"><span>Micropigmentação de sobrancelha</span></div>
+    </div>
+  </section>
+
+  <!-- ============================
+       DEPOIMENTOS — ROLETA
+       ============================ -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-label">
+          <span class="label-line"></span>
+          <span>04 / Depoimentos</span>
+        </div>
+        <h2 class="sec-title">O que dizem<br/><em>nossas clientes</em></h2>
+      </div>
+
+      <!--
+        ROLETA DE DEPOIMENTOS — um por vez, com animação fade+slide.
+        Para adicionar: copie um <div class="dep-item"> e cole dentro de dep-stage.
+      -->
+      <div class="dep-roleta" id="depRoleta">
+
+        <div class="dep-quote-icon">"</div>
+
+        <div class="dep-stage">
+          <div class="dep-item dep-active" data-index="0">
+            <p class="dep-text">"Já te falei que você é a melhor Lash da vida? Estou apaixonada na minha sobrancelha e nos meus cílios!"</p>
+            <div class="dep-stars">★★★★★</div>
+          </div>
+          <div class="dep-item" data-index="1">
+            <p class="dep-text">"Estou me sentindo linda com esses cílios, que Deus abençoe suas mãos, elas são muito abençoadas."</p>
+            <div class="dep-stars">★★★★★</div>
+          </div>
+          <div class="dep-item" data-index="2">
+            <p class="dep-text">"Estou amando, agora não vivo mais sem esses cílios, era o que faltava em mim."</p>
+            <div class="dep-stars">★★★★★</div>
+          </div>
+          <div class="dep-item" data-index="3">
+            <p class="dep-text">"Obrigada por me passar essa confiança!"</p>
+            <div class="dep-stars">★★★★★</div>
+          </div>
+          <div class="dep-item" data-index="4">
+            <p class="dep-text">"O ambiente que você criou para a gente transmite paz e conforto. Me sinto em casa aqui."</p>
+            <div class="dep-stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="dep-roleta-controls">
+          <button class="dep-arrow dep-arrow-prev" id="depPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="dep-roleta-dots" id="depDots"></div>
+          <button class="dep-arrow dep-arrow-next" id="depNext" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="dep-progress-bar">
+          <div class="dep-progress-fill" id="depProgressFill"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       AGENDAMENTO
+       ============================ -->
+  <section class="agendamento" id="agendamento">
+    <div class="container">
+      <div class="agend-grid">
+
+        <div class="agend-left reveal">
+          <div class="sec-label">
+            <span class="label-line"></span>
+            <span>05 / Agendamento</span>
+          </div>
+          <h2 class="sec-title">Reserve sua<br/><em>sessão</em></h2>
+          <p class="agend-desc">
+            Preencha o formulário e enviarei sua solicitação
+            pelo WhatsApp. Confirmação em até 1h.
+          </p>
+
+          <div class="horario-grid">
+            <div class="hg-item"><span>Segunda</span><strong>07h – 16h</strong></div>
+            <div class="hg-item"><span>Ter — Sex</span><strong>07h – 19h</strong></div>
+            <div class="hg-item"><span>Sábado</span><strong>13h – 18h</strong></div>
+            <div class="hg-item closed"><span>Domingo</span><strong>Fechado</strong></div>
+          </div>
+
+          <div class="agend-contacts">
+            <!--
+              CONTATOS E REDES:
+              Edite os textos e links abaixo.
+            -->
+            <a href="https://www.instagram.com/sandycampbeauty/" class="ac-item" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>@sandycampbeauty</span>
+            </a>
+            <div class="ac-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Rua da Palha, 91 — Amparo - Barra Mansa RJ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agend-right reveal">
+          <form class="agend-form" id="agendamentoForm" novalidate>
+            <div class="af-group">
+              <input type="text" id="nome" placeholder=" " required/>
+              <label for="nome">Nome completo</label>
+              <span class="af-error" id="erroNome"></span>
+            </div>
+            <div class="af-group">
+              <input type="tel" id="telefone" placeholder=" " required/>
+              <label for="telefone">Telefone / WhatsApp</label>
+              <span class="af-error" id="erroTelefone"></span>
+            </div>
+            <div class="af-group">
+              <select id="servico" required>
+                <option value="" disabled selected></option>
+                <option>Cílios Fio a Fio clássico</option>
+                <option>Volume Luxo (5d)</option>
+                <option>Volume brasileiro</option>
+                <option>Fox Eyes</option>
+                <option>Efeito sirena</option>
+                <option>Volume Mega</option>
+                <option>Design de sobrancelha</option>
+                <option>Design com henna</option>
+                <option>Brow Lamination</option>
+                <option>Manutenção Cílios Fio a Fio clássico</option>
+                <option>Manutenção Volume Luxo (5d)</option>
+                <option>Manutenção Volume brasileiro</option>
+                <option>Manutenção Fox Eyes</option>
+                <option>Manutenção Volume Mega</option>
+                <option>Micropigmentação de Sobrancelha</option>
+              </select>
+              <label for="servico">Serviço</label>
+              <span class="af-error" id="erroServico"></span>
+            </div>
+            <div class="af-row">
+              <div class="af-group">
+                <input type="date" id="data" placeholder=" " required/>
+                <label for="data">Data</label>
+                <span class="af-error" id="erroData"></span>
+              </div>
+              <div class="af-group">
+                <select id="horario" required>
+                  <option value="" disabled selected></option>
+                </select>
+                <label for="horario">Horário</label>
+                <span class="af-error" id="erroHorario"></span>
+              </div>
+            </div>
+            <div class="af-group">
+              <textarea id="obs" rows="3" placeholder=" "></textarea>
+              <label for="obs">Observações (opcional)</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span class="bs-bg"></span>
+              <span class="bs-text">
+                <i class="fab fa-whatsapp"></i>
+                Enviar pelo WhatsApp
+              </span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="ft-brand">
+        <div class="logo-monogram">SC</div>
+        <div>
+          <strong>Sandy Campbell</strong>
+          <em>Lash &amp; Beauty</em>
+        </div>
+      </div>
+      <div class="ft-social">
+        <!--
+          REDES SOCIAIS FOOTER:
+          Edite os hrefs.
+        -->
+        <a href="https://www.instagram.com/sandycampbeauty/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5524981282793" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sandy Campbell Lash &amp; Beauty · Todos os direitos reservados</p>
+      <p class="ft-made">Feito com <span>♥</span></p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <!--
+    WHATSAPP FLUTUANTE:
+    Altere o número no href.
+  -->
+  <a href="https://wa.me/5524981282793" class="wa-float" target="_blank" id="waFloat" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <div class="wa-ring"></div>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
