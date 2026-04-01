@@ -31,78 +31,10 @@ const CONFIG = {
 /* ============================================
    LOADER — carregamento simulado com progresso
    ============================================ */
-function initLoader() {
-  const loader = document.getElementById('loader');
-  const fill   = document.getElementById('loaderFill');
-  if (!loader) return;
-
-  let progress = 0;
-  const duration = 1400; // ms
-  const startTime = performance.now();
-
-  function animate(now) {
-    const elapsed  = now - startTime;
-    progress = Math.min((elapsed / duration) * 100, 100);
-    fill.style.width = progress + '%';
-
-    if (progress < 100) {
-      requestAnimationFrame(animate);
-    } else {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        document.body.style.overflow = '';
-        revealHero();
-      }, 200);
-    }
-  }
-
-  document.body.style.overflow = 'hidden';
-  requestAnimationFrame(animate);
-}
-
-function revealHero() {
-  // Força repaint das animações CSS do hero
-  document.querySelectorAll('.hero-eyebrow, .ht-line, .hero-sub, .hero-actions, .hero-side, .hero-bottom')
-    .forEach(el => { el.style.animationPlayState = 'running'; });
-}
 
 /* ============================================
    CURSOR PERSONALIZADO
    ============================================ */
-function initCursor() {
-  if (window.innerWidth <= 768) return; // somente desktop
-
-  const cursor   = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  if (!cursor || !follower) return;
-
-  let mouseX = 0, mouseY = 0;
-  let followerX = 0, followerY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top  = mouseY + 'px';
-  });
-
-  // Follower com lag suave
-  function animateFollower() {
-    followerX += (mouseX - followerX) * 0.12;
-    followerY += (mouseY - followerY) * 0.12;
-    follower.style.left = followerX + 'px';
-    follower.style.top  = followerY + 'px';
-    requestAnimationFrame(animateFollower);
-  }
-  animateFollower();
-
-  // Hover em elementos interativos
-  const hoverEls = document.querySelectorAll('a, button, .gt-item, .dep-btn, .dep-dot, .si-cta, .wa-float');
-  hoverEls.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-}
 
 /* ============================================
    NAVBAR
@@ -251,54 +183,6 @@ function initCarousel() {
    CARROSSEL DE SERVIÇOS
    Desliza os 9 artigos horizontalmente.
    ============================================ */
-function initServCarousel() {
-  const track    = document.getElementById('servTrack');
-  const viewport = document.getElementById('servViewport');
-  const prev     = document.getElementById('servPrev');
-  const next     = document.getElementById('servNext');
-  const dotsEl   = document.getElementById('servDots');
-  const label    = document.getElementById('servCurrentLabel');
-  if (!track) return;
-
-  const items = track.querySelectorAll('.servico-item');
-  const total = items.length;
-  let current = 0;
-
-  /* Cria dots */
-  items.forEach((_, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'serv-dot' + (i === 0 ? ' active' : '');
-    btn.setAttribute('aria-label', `Serviço ${i + 1}`);
-    btn.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(btn);
-  });
-
-  function update() {
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsEl.querySelectorAll('.serv-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    if (label) label.textContent = String(current + 1).padStart(2, '0');
-    if (prev)  prev.disabled  = current === 0;
-    if (next)  next.disabled  = current === total - 1;
-  }
-
-  function goTo(n) {
-    current = Math.max(0, Math.min(n, total - 1));
-    update();
-  }
-
-  prev && prev.addEventListener('click', () => goTo(current - 1));
-  next && next.addEventListener('click', () => goTo(current + 1));
-
-  /* Swipe touch */
-  let touchX = 0;
-  viewport && viewport.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
-  viewport && viewport.addEventListener('touchend',   (e) => {
-    const diff = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 45) goTo(diff > 0 ? current + 1 : current - 1);
-  });
-
-  update();
-}
 
 /* ============================================
    DATE PICKER — horários válidos por dia
@@ -462,12 +346,9 @@ function initParallax() {
    INICIALIZAÇÃO PRINCIPAL
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  initLoader();
-  initCursor();
   initNavbar();
   initScrollReveal();
-  initCarousel();       // roleta de depoimentos
-  initServCarousel();   // carrossel de serviços
+  initCarousel();
   initDatePicker();
   initForm();
   initParallax();

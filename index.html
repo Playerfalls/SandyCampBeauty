@@ -12,21 +12,6 @@
 </head>
 <body>
 
-  <!-- CURSOR PERSONALIZADO -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">
-        <span>SC</span>
-      </div>
-      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      <p class="loader-text">Sandy Campbell</p>
-    </div>
-  </div>
-
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -203,30 +188,10 @@
         <h2 class="sec-title">Técnicas &amp;<br/><em>Preços</em></h2>
       </div>
 
-      <div class="serv-carousel-wrap">
-        <!-- Controles superiores -->
-        <div class="serv-nav">
-          <div class="serv-nav-info">
-            <span class="serv-current-label" id="servCurrentLabel">01</span>
-            <span class="serv-sep">/</span>
-            <span class="serv-total-label">09</span>
-          </div>
-          <div class="serv-nav-arrows">
-            <button class="serv-arrow serv-arrow-prev" id="servPrev" aria-label="Serviço anterior">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="serv-arrow serv-arrow-next" id="servNext" aria-label="Próximo serviço">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Track deslizante -->
-        <div class="serv-viewport" id="servViewport">
-          <div class="servicos-list" id="servTrack">
+      <div class="servicos-list">
 
             <!-- SERVIÇO 1 — Cílios Fio a Fio -->
-            <article class="servico-item" data-index="01">
+            <article class="servico-item reveal" data-index="01">
               <div class="si-img-wrap">
                 <img src="servico1.jpg" alt="Fio a Fio Clássico" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -253,7 +218,7 @@
             </article>
 
             <!-- SERVIÇO 2 — Volume Luxo -->
-            <article class="servico-item" data-index="02">
+            <article class="servico-item si-reverse reveal" data-index="02">
               <div class="si-img-wrap">
                 <img src="servico2.jpg" alt="Volume Luxo" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -281,7 +246,7 @@
             </article>
 
             <!-- SERVIÇO 3 — Volume Brasileiro -->
-            <article class="servico-item" data-index="03">
+            <article class="servico-item reveal" data-index="03">
               <div class="si-img-wrap">
                 <img src="servico3.jpg" alt="Volume Brasileiro" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -308,7 +273,7 @@
             </article>
 
             <!-- SERVIÇO 4 — Fox Eyes -->
-            <article class="servico-item" data-index="04">
+            <article class="servico-item si-reverse reveal" data-index="04">
               <div class="si-img-wrap">
                 <img src="servico4.jpg" alt="Fox Eyes" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -336,7 +301,7 @@
             </article>
 
             <!-- SERVIÇO 5 — Volume Mega -->
-            <article class="servico-item" data-index="05">
+            <article class="servico-item reveal" data-index="05">
               <div class="si-img-wrap">
                 <img src="servico5.jpg" alt="Volume Mega" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -363,7 +328,7 @@
             </article>
 
             <!-- SERVIÇO 6 — Design de sobrancelha -->
-            <article class="servico-item" data-index="06">
+            <article class="servico-item si-reverse reveal" data-index="06">
               <div class="si-img-wrap">
                 <img src="servico6.jpg" alt="Design de sobrancelha" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -387,7 +352,7 @@
             </article>
 
             <!-- SERVIÇO 7 — Design com Henna -->
-            <article class="servico-item" data-index="07">
+            <article class="servico-item reveal" data-index="07">
               <div class="si-img-wrap">
                 <img src="servico7.jpg" alt="Design com Henna" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -411,7 +376,7 @@
             </article>
 
             <!-- SERVIÇO 8 — Brow Lamination -->
-            <article class="servico-item" data-index="08">
+            <article class="servico-item si-reverse reveal" data-index="08">
               <div class="si-img-wrap">
                 <img src="servico8.jpg" alt="Brow Lamination" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -435,7 +400,7 @@
             </article>
 
             <!-- SERVIÇO 9 — Micropigmentação -->
-            <article class="servico-item" data-index="09">
+            <article class="servico-item reveal" data-index="09">
               <div class="si-img-wrap">
                 <img src="servico9.jpg" alt="Micropigmentação de sobrancelha" class="si-img" loading="lazy"/>
                 <div class="si-img-overlay"></div>
@@ -459,14 +424,7 @@
               </div>
             </article>
 
-          </div><!-- /servicos-list -->
-        </div><!-- /serv-viewport -->
-
-        <!-- Dots de navegação -->
-        <div class="serv-dots" id="servDots"></div>
-
-      </div><!-- /serv-carousel-wrap -->
-
+      </div><!-- /servicos-list -->
 
   <!-- ============================
        GALERIA
@@ -709,10 +667,6 @@
         </div>
       </div>
       <div class="ft-social">
-        <!--
-          REDES SOCIAIS FOOTER:
-          Edite os hrefs.
-        -->
         <a href="https://www.instagram.com/sandycampbeauty/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/5524981282793" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
@@ -723,11 +677,6 @@
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <!--
-    WHATSAPP FLUTUANTE:
-    Altere o número no href.
-  -->
   <a href="https://wa.me/5524981282793" class="wa-float" target="_blank" id="waFloat" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
     <div class="wa-ring"></div>
